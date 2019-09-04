@@ -1,0 +1,208 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/win/Desktop/MIPS_single_cycle/MIPS_single_cycle
+vALU
+Z0 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 okU=AOSSYiKiOBjg6FMKg0
+I<LHn;zY7FTcDQZ@mo1L[H3
+Z1 dC:/Users/win/Desktop/MIPS_single_cycle
+w1514901799
+8D:/modelsim/win64/ALU.v
+FD:/modelsim/win64/ALU.v
+L0 9
+Z2 OL;L;10.4;61
+!s108 1515327835.261000
+!s107 D:/modelsim/win64/ALU.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/modelsim/win64/ALU.v|
+!i113 0
+Z3 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+n@a@l@u
+vAluCtr
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 YjUUaZEJ@<jh_WZ=3gXO]0
+IGd`QgiPQ<k05j>]lWYO4U2
+R1
+w1514901010
+8D:/modelsim/win64/AluCtr.v
+FD:/modelsim/win64/AluCtr.v
+L0 9
+R2
+!s108 1515327835.320000
+!s107 D:/modelsim/win64/AluCtr.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/modelsim/win64/AluCtr.v|
+!i113 0
+R3
+n@alu@ctr
+vCtr
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 CjV9NgEJz=Zh=;BcMi<FG1
+I]YgGf:Oc[HUTaADXJ]TdK2
+R1
+w1514912973
+8D:/modelsim/win64/Ctr.v
+FD:/modelsim/win64/Ctr.v
+L0 9
+R2
+!s108 1515327835.608000
+!s107 D:/modelsim/win64/Ctr.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/modelsim/win64/Ctr.v|
+!i113 0
+R3
+n@ctr
+vDmemory
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 3^g@>jTP9DfKQX5P>FkaK0
+I`OcKJl>TbF1Ko[3CX>TCn2
+R1
+w1514912995
+8D:/modelsim/win64/Dmemory.v
+FD:/modelsim/win64/Dmemory.v
+L0 9
+R2
+!s108 1515327835.380000
+!s107 D:/modelsim/win64/Dmemory.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/modelsim/win64/Dmemory.v|
+!i113 0
+R3
+n@dmemory
+vIM
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 GL2JIE^g?CSmzB[;AW1bT1
+IORCMk`XNHUPZB87T`SIFd1
+R1
+w1515327833
+8D:/modelsim/win64/IM.v
+FD:/modelsim/win64/IM.v
+L0 9
+R2
+!s108 1515327835.496000
+!s107 D:/modelsim/win64/IM.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/modelsim/win64/IM.v|
+!i113 0
+R3
+n@i@m
+vregfile
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 o5iBSd<_:9gX@McA;<1gm0
+IZb1RQLF:75DDIHzMEb0E41
+R1
+w1514901134
+8D:/modelsim/win64/regfile.v
+FD:/modelsim/win64/regfile.v
+L0 9
+R2
+!s108 1515327835.440000
+!s107 D:/modelsim/win64/regfile.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/modelsim/win64/regfile.v|
+!i113 0
+R3
+vsignext
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 _?>J=gVXUTe9ALhGJTLY20
+IFVMzm7;G3oMz6Cb[f@Dca3
+R1
+w1514901771
+8D:/modelsim/win64/signext.v
+FD:/modelsim/win64/signext.v
+L0 9
+R2
+!s108 1515327835.203000
+!s107 D:/modelsim/win64/signext.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/modelsim/win64/signext.v|
+!i113 0
+R3
+vTestBench
+!s110 1515327835
+!i10b 1
+!s100 N^;2AALVWJZ6=9WaF@^]W1
+IFY<N6^YGA[8OjFd0Dd0H32
+R0
+R1
+w1514901059
+8C:/Users/win/Desktop/MIPS_single_cycle/Testbench_single.v
+FC:/Users/win/Desktop/MIPS_single_cycle/Testbench_single.v
+L0 9
+R2
+r1
+!s85 0
+31
+!s108 1515327835.669000
+!s107 C:/Users/win/Desktop/MIPS_single_cycle/Testbench_single.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/win/Desktop/MIPS_single_cycle/Testbench_single.v|
+!i113 0
+R3
+n@test@bench
+vTestBench_single
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 LLR44f7kl?WD2gMaDE`Bn2
+ISzZdoDKBL`8oKeeLWkB8c3
+R1
+w1514999500
+8D:/modelsim/win64/test_single_cycle.v
+FD:/modelsim/win64/test_single_cycle.v
+L0 9
+R2
+!s108 1514999566.457000
+!s107 D:/modelsim/win64/test_single_cycle.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/modelsim/win64/test_single_cycle.v|
+!i113 0
+R3
+n@test@bench_single
+vtop_single
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 BXUbDSIDPC;GS^THT[l>L0
+IB2BemQl@b=m8<T_2z?IW23
+R1
+w1514913102
+8D:/modelsim/win64/top_single.v
+FD:/modelsim/win64/top_single.v
+L0 9
+R2
+!s108 1515327835.552000
+!s107 D:/modelsim/win64/top_single.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/modelsim/win64/top_single.v|
+!i113 0
+R3

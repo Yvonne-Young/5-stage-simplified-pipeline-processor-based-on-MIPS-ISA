@@ -1,0 +1,64 @@
+D:/modelsim/win64/AluCtr.v {1 {vlog -work work -vopt -stats=none D:/modelsim/win64/AluCtr.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module AluCtr
+
+Top level modules:
+	AluCtr
+
+} {} {}} C:/Users/win/Desktop/MIPS_single_cycle/Testbench_single.v {1 {vlog -work work -vopt -stats=none C:/Users/win/Desktop/MIPS_single_cycle/Testbench_single.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module TestBench
+
+Top level modules:
+	TestBench
+
+} {} {}} D:/modelsim/win64/top_single.v {1 {vlog -work work -vopt -stats=none D:/modelsim/win64/top_single.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module top_single
+
+Top level modules:
+	top_single
+
+} {} {}} D:/modelsim/win64/Ctr.v {1 {vlog -work work -vopt -stats=none D:/modelsim/win64/Ctr.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Ctr
+
+Top level modules:
+	Ctr
+
+} {} {}} D:/modelsim/win64/Dmemory.v {1 {vlog -work work -vopt -stats=none D:/modelsim/win64/Dmemory.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Dmemory
+
+Top level modules:
+	Dmemory
+
+} {} {}} D:/modelsim/win64/IM.v {1 {vlog -work work -vopt -stats=none D:/modelsim/win64/IM.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module IM
+
+Top level modules:
+	IM
+
+} {} {}} D:/modelsim/win64/regfile.v {1 {vlog -work work -vopt -stats=none D:/modelsim/win64/regfile.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module regfile
+
+Top level modules:
+	regfile
+
+} {} {}} D:/modelsim/win64/ALU.v {1 {vlog -work work -vopt -stats=none D:/modelsim/win64/ALU.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} D:/modelsim/win64/signext.v {1 {vlog -work work -vopt -stats=none D:/modelsim/win64/signext.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module signext
+
+Top level modules:
+	signext
+
+} {} {}}
