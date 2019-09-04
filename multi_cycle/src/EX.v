@@ -1,0 +1,383 @@
+//**********************************************************************************************************
+//				author: Yifan Young							   *
+//				date:   2017/1/4							   *
+//				module: EX								   *
+//**********************************************************************************************************
+
+`timescale 1ns/1ns
+
+module EX(//inputs
+           clk                               //Clock signal
+          ,EX_rst_n                          //Reset signal. If EX_rst_n=0, reset the EX_MEM register
+          ,ID_EX_branch                      //When branch=1, jump to the branch target
+          ,ID_EX_read_data_1                 //The data from the register in ID stage
+          ,ID_EX_read_data_2                 //Another data from the register in ID stage
+          ,ID_EX_rt                          //rt
+          ,ID_EX_rd                          //rd. In lw  instruction, rt or rd will be the address of the register to write
+          ,ID_EX_immediate_extended          //The immediate which has been extended to a 32 bits
+          ,ID_EX_pc                          //The value of pc+4
+          ,ID_EX_alusrc                      //If ID_EX_alusrc=0, choose read_data_2 as one of the source of alu, else choose the immediate
+          ,ID_EX_alu_operation               //Control alu 
+          ,ID_EX_memory_read                 //If ID_EX_memory_read=1, data memory can be read
+          ,ID_EX_memory_write                //If ID_EX_memory_write=1, data memory can be written
+          ,ID_EX_memory_to_register          //If ID_EX_memory_to_register=1, choose the data read from the memory to write to the register, else choose the result of alu
+          ,ID_EX_register_write              //If ID_EX_register_write=1, register can be written in WB stage, else it can't be written
+	
+          
+          ,ID_EX_predictor
+          ,ID_EX_branch_target_predict
+          
+          //inputs for forwarding
+          ,ID_EX_rs
+          ,MEM_EX_r
+          ,MEM_EX_alu_result
+          ,MEM_EX_register_write
+          ,MEM_WB_r
+          ,MEM_WB_register_write
+          ,MEM_WB_register_write_data
+	//  ,alu_operation
+          
+          //outputs                           
+          ,EX_ID_rt
+          ,EX_ID_memory_read
+          
+                                //
+          ,EX_MEM_alu_result                 //The result of alu
+          ,EX_MEM_memory_write_data          //The data to write to the data memory. It equals read_data_2
+          ,EX_MEM_register_write_address     //The address of the register to write in WB stage
+          ,EX_MEM_memory_read                //Equals the input
+          ,EX_MEM_memory_write               //Equals the input
+          ,EX_MEM_memory_to_register         //Equals the input 
+          ,EX_MEM_register_write             //Equals the input
+          ,EX_MEM_r
+//	  ,EX_MEM_tmp_rd
+          
+          ,EX_IF_branch_target              //The branch_target         
+          ,EX_IF_branch                     //If IE_IF_branch=1, go to the branch target, else, go to pc+4 
+          ,EX_IF_zero 
+          ,EX_IF_pc
+          ,EX_IF_predictor
+          ,EX_IF_branch_target_predict
+          
+          //flush
+          ,flush
+          );
+                   
+input clk;
+input EX_rst_n;
+input ID_EX_branch;
+input ID_EX_read_data_1;
+input ID_EX_read_data_2;
+input ID_EX_rt;
+input ID_EX_rd;
+input ID_EX_immediate_extended;
+input ID_EX_pc;
+input ID_EX_alusrc;
+input ID_EX_alu_operation;
+input ID_EX_memory_read;
+input ID_EX_memory_write;
+input ID_EX_memory_to_register;
+input ID_EX_register_write;
+input ID_EX_predictor;
+input ID_EX_branch_target_predict;
+
+
+//input of forwardings
+input ID_EX_rs;
+input MEM_EX_r;
+input MEM_EX_alu_result;
+input MEM_EX_register_write;
+input MEM_WB_r;
+input MEM_WB_register_write;
+input MEM_WB_register_write_data;
+//input alu_operaion;
+
+
+
+output EX_ID_rt;
+output EX_ID_memory_read;
+output EX_MEM_alu_result;
+output EX_MEM_memory_write_data;
+output EX_MEM_register_write_address;
+output EX_MEM_memory_read;
+output EX_MEM_memory_write;
+output EX_MEM_memory_to_register;
+output EX_MEM_register_write;
+output EX_MEM_r;
+//output EX_MEM_tmp_rd;
+
+output EX_IF_branch_target;
+output EX_IF_branch;
+output EX_IF_zero;
+output EX_IF_pc;
+output EX_IF_predictor;
+output EX_IF_branch_target_predict;
+
+output flush;
+
+
+wire clk;
+wire EX_rst_n;
+wire ID_EX_branch;
+wire [31:0]ID_EX_read_data_1;
+wire [31:0]ID_EX_read_data_2;
+wire [4:0]ID_EX_rt;
+wire [4:0]ID_EX_rd;
+wire [31:0]ID_EX_immediate_extended;
+wire [31:0]ID_EX_pc;
+wire [1:0]ID_EX_predictor;
+wire [31:0]ID_EX_branch_target_predict;
+
+wire ID_EX_alusrc;
+wire [1:0]ID_EX_alu_operation;
+wire ID_EX_memory_read;
+wire ID_EX_memory_write;
+wire ID_EX_memory_to_register;
+wire ID_EX_register_write;
+
+//forwarding inputs
+wire [4:0]ID_EX_rs;
+wire [4:0]MEM_EX_r;
+wire [31:0]MEM_EX_alu_result;
+wire MEM_EX_register_write;
+wire [4:0]MEM_WB_r;
+wire MEM_WB_register_write;
+wire [31:0]MEM_WB_register_write_data;
+//wire [1:0]alu_operation;
+
+
+//OUTPUTS
+wire [4:0]EX_ID_rt;
+wire EX_ID_memory_read;
+wire [4:0]EX_MEM_r_reg;
+reg [4:0]EX_MEM_r;
+//reg [4:0]EX_MEM_tmp_rd;
+//====================================
+
+reg [31:0]EX_MEM_alu_result;
+reg [31:0]EX_MEM_memory_write_data;
+reg [4:0]EX_MEM_register_write_address;
+reg EX_MEM_memory_read;
+reg EX_MEM_memory_write;
+reg EX_MEM_memory_to_register;
+reg EX_MEM_register_write;
+
+wire flush;
+reg [31:0]EX_IF_branch_target;
+reg EX_IF_branch;
+reg EX_IF_zero;
+reg [31:0]EX_IF_pc;
+reg [1:0]EX_IF_predictor;
+reg [31:0]EX_IF_branch_target_predict;
+
+ 
+
+//reg [31:0]EX_MEM_memory_address;          
+ 
+////////////////////////////////////////The modules and their ports///////////////////////////////////////////////
+//The ports of alu_control module
+//alu_operation has already been defined as the input of IE stage
+wire [5:0]funct;                //input
+wire [3:0]operation;           //output of alu_control, and the input of ALU
+
+assign funct[5:0]=ID_EX_immediate_extended[5:0];
+
+//The ports of ALU module
+//[3:0]operation,has already been defined, because it is the ouput of control module
+//source _1 has already been defined as the input of EX stage
+wire [31:0]source_2;           //input
+wire [31:0]source_1;           //input 
+wire [31:0]source_0;           //the first MUX value of read_data and extended value
+wire zero;                     //output
+wire [31:0]alu_result;         //output
+
+assign source_0[31:0]=ID_EX_alusrc ? ID_EX_immediate_extended : ID_EX_read_data_2;
+
+wire [1:0]Select_1;
+wire [1:0]Select_2;
+
+//alu_control module
+EX_alu_control EX_alu_control_1( .funct(funct)
+                                ,.alu_operation(ID_EX_alu_operation)
+                                ,.operation(operation)
+                                );
+
+//ALU module                          
+EX_alu EX_alu_1( .source_1(source_1)
+                ,.source_2(source_2)
+                ,.operation(operation)
+                ,.zero(zero)
+                ,.alu_result(alu_result)
+                );
+
+Forwarding Forwarding_1(//inputs
+                        .ID_EX_rt(ID_EX_rt),    //20-16 bit of instruction
+                        .ID_EX_rs(ID_EX_rs),    //25-21 bit of instruction
+                  
+                        .MEM_EX_r(MEM_EX_r),     //the operand from EX stage
+                        .WB_EX_r(MEM_WB_r),   //the operand from MEM stage
+                  
+                        .WB_EX_register_write(MEM_WB_register_write),  //the control signal from WB
+                        .MEM_EX_register_write(MEM_EX_register_write),    //the control signal from EX
+                  
+                        //outputs
+                        .Select_1(Select_1),    //select the operand of Rs
+                        .Select_2(Select_2)     //select the operand of Rt
+                        ); 
+
+Forwarding_MUX MUX_1(
+                     .Select(Select_1),
+                     .ALU_result(MEM_EX_alu_result),
+                     .WB_result(MEM_WB_register_write_data),
+                     .read_data(ID_EX_read_data_1),         
+                     
+                     .selected(source_1)
+                     );
+
+ 
+Forwarding_MUX MUX_2(
+                     .Select(Select_2),
+                     .ALU_result(MEM_EX_alu_result),
+                     .WB_result(MEM_WB_register_write_data),
+                     .read_data(source_0),         
+                     
+                     .selected(source_2)
+                     );
+
+
+Forwarding_2_MUX MUX_3(
+                       .control(ID_EX_memory_read),
+                       .Rt(ID_EX_rt),
+                       .Rd(ID_EX_rd),
+                        
+                       .Output(EX_MEM_r_reg)
+                       );
+/*
+always @(posedge clk or negedge EX_rst_n)
+if(!EX_rst_n) begin
+  EX_MEM_r<=5'b0;
+end
+else begin
+  EX_MEM_r<=EX_MEM_r_reg;
+end             
+*/
+/*
+reg [4:0] ID_EX_rt_reg;
+always@(posedge clk or negedge EX_rst_n)
+if(!EX_rst_n)
+	ID_EX_rt_reg<=5'b0;
+else
+	ID_EX_rt_reg<=ID_EX_rt_reg;
+*/
+always@(posedge clk or negedge EX_rst_n)
+if(!EX_rst_n)
+	EX_MEM_r<=5'b0;
+else if(ID_EX_alu_operation==2'b11)
+	EX_MEM_r<=ID_EX_rt;
+else
+	EX_MEM_r<=EX_MEM_r_reg;
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                          
+                          
+///////////////////////////////////////////////The outputs////////////////////////////////////////////////////////////
+//EX_IF_predictor and EX_IF_branch_target_predict
+always@(posedge clk or negedge EX_rst_n)
+if(!EX_rst_n) begin
+  EX_IF_predictor<=2'b0;
+  EX_IF_branch_target_predict<=31'b0;
+end
+else begin
+  EX_IF_predictor<=ID_EX_predictor;
+  EX_IF_branch_target_predict<=ID_EX_branch_target_predict;
+end
+
+//test
+reg [31:0]tar;
+reg [31:0]IDPC;
+always@(ID_EX_branch_target_predict[31:0])
+tar=ID_EX_branch_target_predict[31:0];
+always@(ID_EX_pc[31:0] + (ID_EX_immediate_extended[31:0] << 2))
+IDPC=ID_EX_pc[31:0] + (ID_EX_immediate_extended[31:0] << 2);
+
+//flush
+assign flush = (ID_EX_branch && zero 
+        && (ID_EX_branch_target_predict[31:0]!=ID_EX_pc[31:0] + (ID_EX_immediate_extended[31:0] << 2))); //branch_target
+        
+        
+//test
+reg flush_test;
+always@(flush)
+flush_test=flush;
+//
+
+
+
+//EX_IF_pc
+always@(posedge clk or negedge EX_rst_n)
+if(!EX_rst_n)
+  EX_IF_pc[31:0]<=32'b0;
+else
+  EX_IF_pc[31:0]<=ID_EX_pc[31:0];
+  
+
+//EX_IF_branch_target and EX_IF_branch
+always @(posedge clk or negedge EX_rst_n)
+if(!EX_rst_n) begin                           
+  EX_IF_branch_target[31:0] <= 32'b0;
+  EX_IF_branch <= 1'b0;
+  end
+else begin 
+  EX_IF_branch_target[31:0] <= ID_EX_pc[31:0] + (ID_EX_immediate_extended[31:0] << 2);
+  EX_IF_branch <= ID_EX_branch;
+  end 
+
+//EX_IF_zero and EX_MEM_alu_result
+always @(posedge clk or negedge EX_rst_n)
+if(!EX_rst_n)begin 
+  EX_IF_zero <= 1'b0;
+  EX_MEM_alu_result[31:0] <= 32'b0;
+  end
+else begin 
+  EX_IF_zero <= zero;
+  EX_MEM_alu_result <= alu_result;
+  end
+
+//EX_MEM_memory_write_data
+always @(posedge clk or negedge EX_rst_n)
+if(!EX_rst_n)
+  EX_MEM_memory_write_data[31:0] <= 32'b0;
+else
+  EX_MEM_memory_write_data[31:0] <= ID_EX_read_data_2[31:0];
+  
+//EX_MEM_register_write_address
+always @(posedge clk or negedge EX_rst_n)
+if(!EX_rst_n)
+  EX_MEM_register_write_address[4:0] <= 5'b0;
+else if(ID_EX_alu_operation==2'b10)            //R-type instruction, the data is written to rd
+  EX_MEM_register_write_address[4:0] <= ID_EX_rd[4:0];
+else                                           //Other conditions, including lw, the data is written to rt
+  EX_MEM_register_write_address[4:0] <= ID_EX_rt[4:0];  
+  
+//Other outputs, including EX_MEM_memory_read, EX_MEM_memory_write, EX_MEM_memory_to_register, EX_MEM_register_write
+always @(posedge clk or negedge EX_rst_n)
+if(!EX_rst_n) begin
+  EX_MEM_memory_read <=1'b0;
+  EX_MEM_memory_write<=1'b0;
+  EX_MEM_memory_to_register <= 1'b0;
+  EX_MEM_register_write <= 1'b0;
+  end
+else begin
+  EX_MEM_memory_read <= ID_EX_memory_read;
+  EX_MEM_memory_write<= ID_EX_memory_write;
+  EX_MEM_memory_to_register <= ID_EX_memory_to_register;
+  EX_MEM_register_write <= ID_EX_register_write;
+  end
+
+/*======================================================*/
+//For hazard detection test 
+assign EX_ID_rt=ID_EX_rt;
+assign EX_ID_memory_read=ID_EX_memory_read;
+    
+endmodule

@@ -1,0 +1,428 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/win/Desktop/MIPS_multi_cycle
+vcontrol
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 n]nUNnDQVf7NS9I9m;]2J1
+IJ^n<ko<i1GR@W>PEOeDQ_3
+R0
+w1515288035
+8C:/Users/win/Desktop/MIPS_multi_cycle/control.v
+FC:/Users/win/Desktop/MIPS_multi_cycle/control.v
+L0 8
+Z2 OL;L;10.4;61
+!s108 1515324482.324000
+!s107 C:/Users/win/Desktop/MIPS_multi_cycle/control.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/win/Desktop/MIPS_multi_cycle/control.v|
+!i113 0
+Z3 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+vData_mem
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 oR;UcFoNNfoPl[^;<;bDN1
+IhWVo>_@:EEKBzV7ga3PgS0
+R0
+w1515300965
+8C:/Users/win/Desktop/MIPS_multi_cycle/Data_mem.v
+FC:/Users/win/Desktop/MIPS_multi_cycle/Data_mem.v
+L0 1
+R2
+!s108 1515324482.404000
+!s107 C:/Users/win/Desktop/MIPS_multi_cycle/Data_mem.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/win/Desktop/MIPS_multi_cycle/Data_mem.v|
+!i113 0
+R3
+n@data_mem
+vEX
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 Wi0@W;AFDzEN5l^zYi=iC3
+I0Ic;mf_Z3iZL:ZhiAGONi3
+R0
+w1515295675
+8C:/Users/win/Desktop/MIPS_multi_cycle/EX.v
+FC:/Users/win/Desktop/MIPS_multi_cycle/EX.v
+L0 9
+R2
+!s108 1515324482.464000
+!s107 C:/Users/win/Desktop/MIPS_multi_cycle/EX.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/win/Desktop/MIPS_multi_cycle/EX.v|
+!i113 0
+R3
+n@e@x
+vEX_alu
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 bFkWa5<HBTc0EC7djILR^2
+I2?heoSLZ9G:nXO@_Kl8[G3
+R0
+w1514999103
+8C:/Users/win/Desktop/MIPS_multi_cycle/EX_alu.v
+FC:/Users/win/Desktop/MIPS_multi_cycle/EX_alu.v
+L0 9
+R2
+!s108 1515324482.524000
+!s107 C:/Users/win/Desktop/MIPS_multi_cycle/EX_alu.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/win/Desktop/MIPS_multi_cycle/EX_alu.v|
+!i113 0
+R3
+n@e@x_alu
+vEX_alu_control
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 j`lS1_AA>n01fbX@RU78a1
+IdKDWHI__?7zA`nN`f6bEl2
+R0
+w1514998398
+8C:/Users/win/Desktop/MIPS_multi_cycle/EX_alu_control.v
+FC:/Users/win/Desktop/MIPS_multi_cycle/EX_alu_control.v
+L0 9
+R2
+!s108 1515324482.592000
+!s107 C:/Users/win/Desktop/MIPS_multi_cycle/EX_alu_control.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/win/Desktop/MIPS_multi_cycle/EX_alu_control.v|
+!i113 0
+R3
+n@e@x_alu_control
+vForwarding
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 nP^YlJ9@TUjXl?KmmSF[l1
+I7fDBicV?Uc<O1g5hib64b1
+R0
+w1515287697
+8C:/Users/win/Desktop/MIPS_multi_cycle/Forwarding.v
+FC:/Users/win/Desktop/MIPS_multi_cycle/Forwarding.v
+L0 9
+R2
+!s108 1515324482.644000
+!s107 C:/Users/win/Desktop/MIPS_multi_cycle/Forwarding.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/win/Desktop/MIPS_multi_cycle/Forwarding.v|
+!i113 0
+R3
+n@forwarding
+vForwarding_2_MUX
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 eLA_j:9HmeE2WTH>X7L5D3
+IOG6K^JNn0jTh1iF0]hz?:2
+R0
+w1514999047
+8C:/Users/win/Desktop/MIPS_multi_cycle/Forwarding_2_MUX.v
+FC:/Users/win/Desktop/MIPS_multi_cycle/Forwarding_2_MUX.v
+L0 9
+R2
+!s108 1515324482.705000
+!s107 C:/Users/win/Desktop/MIPS_multi_cycle/Forwarding_2_MUX.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/win/Desktop/MIPS_multi_cycle/Forwarding_2_MUX.v|
+!i113 0
+R3
+n@forwarding_2_@m@u@x
+vForwarding_MUX
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 TAOKd9C8AX4@Bz5jk2WWg0
+IJf84PB]dhak[Gm9OG>^z01
+R0
+w1514998225
+8C:/Users/win/Desktop/MIPS_multi_cycle/Forwarding_MUX.v
+FC:/Users/win/Desktop/MIPS_multi_cycle/Forwarding_MUX.v
+L0 9
+R2
+!s108 1515324482.765000
+!s107 C:/Users/win/Desktop/MIPS_multi_cycle/Forwarding_MUX.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/win/Desktop/MIPS_multi_cycle/Forwarding_MUX.v|
+!i113 0
+R3
+n@forwarding_@m@u@x
+vHazard_detection
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 bn4Hhm7>SSN7N??[R[d4;2
+IYb4SZBaT7Yak8NjzU<kIY2
+R0
+w1514998997
+8C:/Users/win/Desktop/MIPS_multi_cycle/Hazards_detection.v
+FC:/Users/win/Desktop/MIPS_multi_cycle/Hazards_detection.v
+L0 9
+R2
+!s108 1515324482.834000
+!s107 C:/Users/win/Desktop/MIPS_multi_cycle/Hazards_detection.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/win/Desktop/MIPS_multi_cycle/Hazards_detection.v|
+!i113 0
+R3
+n@hazard_detection
+vID
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 ;=]JQhPAfMF_K<O]nL8O01
+IE9;8ZcEUDd7cPjOIZMjGm3
+R0
+w1515290146
+8C:/Users/win/Desktop/MIPS_multi_cycle/ID.v
+FC:/Users/win/Desktop/MIPS_multi_cycle/ID.v
+L0 8
+R2
+!s108 1515324482.924000
+!s107 C:/Users/win/Desktop/MIPS_multi_cycle/ID.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/win/Desktop/MIPS_multi_cycle/ID.v|
+!i113 0
+R3
+n@i@d
+vIF
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 RcK1zQX@ca82f7`B[Oo<S1
+I8A4^7e_?G]o=Wi590a8[>0
+R0
+w1514998673
+8C:/Users/win/Desktop/MIPS_multi_cycle/IF.v
+FC:/Users/win/Desktop/MIPS_multi_cycle/IF.v
+L0 9
+R2
+!s108 1515324483.025000
+!s107 C:/Users/win/Desktop/MIPS_multi_cycle/IF.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/win/Desktop/MIPS_multi_cycle/IF.v|
+!i113 0
+R3
+n@i@f
+vIM
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 5olg;7V[nSdT@^F>:EMj>0
+IN0dQ3:KfIcn9OhzDlzBX;1
+R0
+w1515324478
+8C:/Users/win/Desktop/MIPS_multi_cycle/IM.v
+FC:/Users/win/Desktop/MIPS_multi_cycle/IM.v
+L0 9
+R2
+!s108 1515324483.095000
+!s107 C:/Users/win/Desktop/MIPS_multi_cycle/IM.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/win/Desktop/MIPS_multi_cycle/IM.v|
+!i113 0
+R3
+n@i@m
+vMEM
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 B2TAgGUASifH:R_@:olhM1
+I8_9WNHCU;TACU2>dmeiaT1
+R0
+w1514998554
+8C:/Users/win/Desktop/MIPS_multi_cycle/MEM.v
+FC:/Users/win/Desktop/MIPS_multi_cycle/MEM.v
+L0 9
+R2
+!s108 1515324483.155000
+!s107 C:/Users/win/Desktop/MIPS_multi_cycle/MEM.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/win/Desktop/MIPS_multi_cycle/MEM.v|
+!i113 0
+R3
+n@m@e@m
+vMEM_WB
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 D8niz@aVc4RZ@MmaD:SU<2
+I3:OgeQUZM:Rg[oJ:4ghIK2
+R0
+w1514999178
+8C:/Users/win/Desktop/MIPS_multi_cycle/MEM_WB.v
+FC:/Users/win/Desktop/MIPS_multi_cycle/MEM_WB.v
+L0 9
+R2
+!s108 1515324483.224000
+!s107 C:/Users/win/Desktop/MIPS_multi_cycle/MEM_WB.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/win/Desktop/MIPS_multi_cycle/MEM_WB.v|
+!i113 0
+R3
+n@m@e@m_@w@b
+vMEM_WB_MUX
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 d=8<iB[l5C:_9YmEc]>z?0
+ISFLXJ?cMdzIRQKQXl;H6V2
+R0
+w1514998737
+8C:/Users/win/Desktop/MIPS_multi_cycle/MEM_WB_MUX.v
+FC:/Users/win/Desktop/MIPS_multi_cycle/MEM_WB_MUX.v
+L0 9
+R2
+!s108 1515324483.284000
+!s107 C:/Users/win/Desktop/MIPS_multi_cycle/MEM_WB_MUX.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/win/Desktop/MIPS_multi_cycle/MEM_WB_MUX.v|
+!i113 0
+R3
+n@m@e@m_@w@b_@m@u@x
+vregister
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 PF;8I;T4bH=di5T[3]=Xm0
+IoUiEGRLlgg>Efb[B[dim:2
+R0
+w1515321952
+8C:/Users/win/Desktop/MIPS_multi_cycle/register.v
+FC:/Users/win/Desktop/MIPS_multi_cycle/register.v
+L0 9
+R2
+!s108 1515324483.335000
+!s107 C:/Users/win/Desktop/MIPS_multi_cycle/register.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/win/Desktop/MIPS_multi_cycle/register.v|
+!i113 0
+R3
+vsignext
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 VR4bZF5VSW_E<MzZJ11nz2
+I4;J=9dVjHOb=YngZmUFOV2
+R0
+w1515253138
+8C:/Users/win/Desktop/MIPS_multi_cycle/signext.v
+FC:/Users/win/Desktop/MIPS_multi_cycle/signext.v
+L0 9
+R2
+!s108 1515324483.405000
+!s107 C:/Users/win/Desktop/MIPS_multi_cycle/signext.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/win/Desktop/MIPS_multi_cycle/signext.v|
+!i113 0
+R3
+vTestBench
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 L5XS7M7NJEC<ZWTKO=LYO3
+IWgCj7;neRcRd509e?@Z781
+R0
+w1514915375
+Z4 8D:/modelsim/win64/test_single_cycle.v
+Z5 FD:/modelsim/win64/test_single_cycle.v
+L0 9
+R2
+!s108 1514999350.551000
+Z6 !s107 D:/modelsim/win64/test_single_cycle.v|
+Z7 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/modelsim/win64/test_single_cycle.v|
+!i113 0
+R3
+n@test@bench
+vTestBench_multi
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 Uf_TDCQk=T_F6Xd9QzC`H3
+IR@>?4dkQSJ^5<`?RJaVCO0
+R0
+w1515251257
+8C:/Users/win/Desktop/MIPS_multi_cycle/test_single_cycle.v
+FC:/Users/win/Desktop/MIPS_multi_cycle/test_single_cycle.v
+L0 9
+R2
+!s108 1515324483.475000
+!s107 C:/Users/win/Desktop/MIPS_multi_cycle/test_single_cycle.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/win/Desktop/MIPS_multi_cycle/test_single_cycle.v|
+!i113 0
+R3
+n@test@bench_multi
+vTestBench_single
+!s110 1514999625
+!i10b 1
+!s100 LLR44f7kl?WD2gMaDE`Bn2
+ISzZdoDKBL`8oKeeLWkB8c3
+R1
+R0
+w1514999500
+R4
+R5
+L0 9
+R2
+r1
+!s85 0
+31
+!s108 1514999625.263000
+R6
+R7
+!i113 0
+R3
+n@test@bench_single
+vTOP
+R1
+r1
+!s85 0
+31
+!i10b 1
+!s100 PJSkXhnJ]In^MRALKc?ab1
+IKD49<i_P]?I^CCb`8Zz:Q1
+R0
+w1515290762
+8C:/Users/win/Desktop/MIPS_multi_cycle/top.v
+FC:/Users/win/Desktop/MIPS_multi_cycle/top.v
+L0 9
+R2
+!s108 1515324482.274000
+!s107 C:/Users/win/Desktop/MIPS_multi_cycle/top.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|C:/Users/win/Desktop/MIPS_multi_cycle/top.v|
+!i113 0
+R3
+n@t@o@p

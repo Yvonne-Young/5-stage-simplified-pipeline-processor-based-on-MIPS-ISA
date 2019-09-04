@@ -1,0 +1,134 @@
+C:/Users/win/Desktop/MIPS_multi_cycle/control.v {1 {vlog -work work -vopt -stats=none C:/Users/win/Desktop/MIPS_multi_cycle/control.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module control
+
+Top level modules:
+	control
+
+} {} {}} C:/Users/win/Desktop/MIPS_Young/signext.v {1 {vlog -work work -vopt -stats=none C:/Users/win/Desktop/MIPS_Young/signext.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module signext
+
+Top level modules:
+	signext
+
+} {} {}} C:/Users/win/Desktop/MIPS_multi_cycle/Forwarding_MUX.v {1 {vlog -work work -vopt -stats=none C:/Users/win/Desktop/MIPS_multi_cycle/Forwarding_MUX.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Forwarding_MUX
+
+Top level modules:
+	Forwarding_MUX
+
+} {} {}} C:/Users/win/Desktop/MIPS_multi_cycle/ID.v {1 {vlog -work work -vopt -stats=none C:/Users/win/Desktop/MIPS_multi_cycle/ID.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module ID
+
+Top level modules:
+	ID
+
+} {} {}} C:/Users/win/Desktop/MIPS_multi_cycle/EX.v {1 {vlog -work work -vopt -stats=none C:/Users/win/Desktop/MIPS_multi_cycle/EX.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module EX
+
+Top level modules:
+	EX
+
+} {} {}} C:/Users/win/Desktop/MIPS_multi_cycle/EX_alu_control.v {1 {vlog -work work -vopt -stats=none C:/Users/win/Desktop/MIPS_multi_cycle/EX_alu_control.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module EX_alu_control
+
+Top level modules:
+	EX_alu_control
+
+} {} {}} C:/Users/win/Desktop/MIPS_multi_cycle/MEM.v {1 {vlog -work work -vopt -stats=none C:/Users/win/Desktop/MIPS_multi_cycle/MEM.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module MEM
+
+Top level modules:
+	MEM
+
+} {} {}} C:/Users/win/Desktop/MIPS_multi_cycle/IF.v {1 {vlog -work work -vopt -stats=none C:/Users/win/Desktop/MIPS_multi_cycle/IF.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module IF
+
+Top level modules:
+	IF
+
+} {} {}} C:/Users/win/Desktop/MIPS_multi_cycle/MEM_WB_MUX.v {1 {vlog -work work -vopt -stats=none C:/Users/win/Desktop/MIPS_multi_cycle/MEM_WB_MUX.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module MEM_WB_MUX
+
+Top level modules:
+	MEM_WB_MUX
+
+} {} {}} C:/Users/win/Desktop/MIPS_multi_cycle/Data_mem.v {1 {vlog -work work -vopt -stats=none C:/Users/win/Desktop/MIPS_multi_cycle/Data_mem.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Data_mem
+
+Top level modules:
+	Data_mem
+
+} {} {}} D:/modelsim/win64/test_single_cycle.v {1 {vlog -work work -vopt -stats=none D:/modelsim/win64/test_single_cycle.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module TestBench_multi
+
+Top level modules:
+	TestBench_multi
+
+} {} {}} C:/Users/win/Desktop/MIPS_multi_cycle/Hazards_detection.v {1 {vlog -work work -vopt -stats=none C:/Users/win/Desktop/MIPS_multi_cycle/Hazards_detection.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Hazard_detection
+
+Top level modules:
+	Hazard_detection
+
+} {} {}} C:/Users/win/Desktop/MIPS_multi_cycle/Forwarding.v {1 {vlog -work work -vopt -stats=none C:/Users/win/Desktop/MIPS_multi_cycle/Forwarding.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Forwarding
+
+Top level modules:
+	Forwarding
+
+} {} {}} C:/Users/win/Desktop/MIPS_multi_cycle/top.v {1 {vlog -work work -vopt -stats=none C:/Users/win/Desktop/MIPS_multi_cycle/top.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module TOP
+
+Top level modules:
+	TOP
+
+} {} {}} C:/Users/win/Desktop/MIPS_multi_cycle/Forwarding_2_MUX.v {1 {vlog -work work -vopt -stats=none C:/Users/win/Desktop/MIPS_multi_cycle/Forwarding_2_MUX.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Forwarding_2_MUX
+
+Top level modules:
+	Forwarding_2_MUX
+
+} {} {}} C:/Users/win/Desktop/MIPS_multi_cycle/register.v {1 {vlog -work work -vopt -stats=none C:/Users/win/Desktop/MIPS_multi_cycle/register.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module register
+
+Top level modules:
+	register
+
+} {} {}} C:/Users/win/Desktop/MIPS_multi_cycle/EX_alu.v {1 {vlog -work work -vopt -stats=none C:/Users/win/Desktop/MIPS_multi_cycle/EX_alu.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module EX_alu
+
+Top level modules:
+	EX_alu
+
+} {} {}} C:/Users/win/Desktop/MIPS_multi_cycle/IM.v {1 {vlog -work work -vopt -stats=none C:/Users/win/Desktop/MIPS_multi_cycle/IM.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module IM
+
+Top level modules:
+	IM
+
+} {} {}} C:/Users/win/Desktop/MIPS_multi_cycle/MEM_WB.v {1 {vlog -work work -vopt -stats=none C:/Users/win/Desktop/MIPS_multi_cycle/MEM_WB.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module MEM_WB
+
+Top level modules:
+	MEM_WB
+
+} {} {}}

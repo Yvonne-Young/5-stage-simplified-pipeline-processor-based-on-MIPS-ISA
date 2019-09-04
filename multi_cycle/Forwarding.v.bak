@@ -1,0 +1,83 @@
+//**********************************************************************************************************
+//				author: Yifan Young							   *
+//				date:   2017/1/4							   *
+//				module: Forwarding							   *
+//**********************************************************************************************************
+
+`timescale 1ns/1ns
+
+module Forwarding(
+                  ID_EX_rt,    //20-16 bit of instruction
+                  ID_EX_rs,    //25-21 bit of instruction
+                  
+                  MEM_EX_r,    //the operand from MEM stage
+                  WB_EX_r,     //the operand from WB stage
+                  
+                  WB_EX_register_write,//the control signal from WB
+                  MEM_EX_register_write,    //the control signal from EX
+                  
+                  //outputs
+                  Select_1,    //select the operand of Rs
+                  Select_2     //select the operand of Rt
+                  );
+
+input ID_EX_rt;
+wire [4:0]ID_EX_rt;
+
+input ID_EX_rs;
+wire [4:0]ID_EX_rs;
+
+input MEM_EX_r;
+wire  [4:0]MEM_EX_r;
+
+input WB_EX_r;
+wire [4:0]WB_EX_r;
+
+input WB_EX_register_write;
+wire  WB_EX_register_write;
+
+input MEM_EX_register_write;
+wire  MEM_EX_register_write;
+
+//Three selects of MUX, 01 for ALU result, 10 for Memory result, 00 for nothing
+output Select_1;
+wire [1:0]Select_1;
+//reg [1:0]Select_1;
+
+output Select_2;
+wire [1:0]Select_2;
+//reg [1:0]Select_2;
+/*
+assign Select_1=(MEM_EX_register_write&&(MEM_EX_r!=0)&&(MEM_EX_r==ID_EX_rs))?2'b01:    //For Rs select 
+                (WB_EX_register_write&&(!(MEM_EX_register_write&&(MEM_EX_r!=0)&&(MEM_EX_r==ID_EX_rs)))
+                &&(WB_EX_r==ID_EX_rs))?2'b10:2'b0;
+
+assign Select_2=(MEM_EX_register_write&&(MEM_EX_r!=0)&&(MEM_EX_r==ID_EX_rt))?2'b01:    //For Rt select 
+                (WB_EX_register_write&&(!(MEM_EX_register_write&&(MEM_EX_r!=0)&&(MEM_EX_r==ID_EX_rt)))
+                &&(WB_EX_r==ID_EX_rt))?2'b10:2'b0;
+*/
+/*
+always@(*)	begin
+if(MEM_EX_register_write && (MEM_EX_r!=0) && (MEM_EX_r==ID_EX_rs))
+	Select_1=2'b01;
+else if(WB_EX_register_write && (WB_EX_r!=0) && (!(MEM_EX_register_write && (MEM_EX_r!=0) && (MEM_EX_r!=ID_EX_rs)) && (WB_EX_r==ID_EX_rs)))
+	Select_1=2'b10;
+else	Select_1=2'b0;
+end
+
+always@(*)	begin
+if(MEM_EX_register_write && (MEM_EX_r!=0) && (MEM_EX_r==ID_EX_rt))
+	Select_1=2'b01;
+else if(WB_EX_register_write && (WB_EX_r!=0) && (!(MEM_EX_register_write && (MEM_EX_r!=0) && (MEM_EX_r!=ID_EX_rs)) && (WB_EX_r==ID_EX_rs)))
+	Select_2=2'b10;
+else	Select_2=2'b0;
+end
+*/
+assign Select_1=(MEM_EX_register_write&&(MEM_EX_r!=0)&&(MEM_EX_r==ID_EX_rs))?2'b01:    //For Rs select 
+                (WB_EX_register_write && (WB_EX_r!=0) && (!(MEM_EX_register_write && (MEM_EX_r!=0) && (MEM_EX_r==ID_EX_rs)) && (WB_EX_r==ID_EX_rs)))?2'b10:2'b0;
+
+assign Select_2=(MEM_EX_register_write&&(MEM_EX_r!=0)&&(MEM_EX_r==ID_EX_rt))?2'b01:    //For Rt select 
+                (WB_EX_register_write && (WB_EX_r!=0) && (!(MEM_EX_register_write && (MEM_EX_r!=0) && (MEM_EX_r==ID_EX_rt)) && (WB_EX_r==ID_EX_rt)))?2'b10:2'b0;
+                
+endmodule
+
